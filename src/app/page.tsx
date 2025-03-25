@@ -1,95 +1,84 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
+import { useRef } from "react";
 
 export default function Home() {
+  // elem refs for each div
+  const techElemRef = useRef<HTMLDivElement | null>(null);
+  const musicElemRef = useRef<HTMLDivElement | null>(null);
+  const createElemRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollOptions: ScrollIntoViewOptions = {
+    behavior: "smooth",
+  };
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          className={styles.mastheadImage}
+          src="/Dax_Lee_Portrait_500.jpeg"
+          alt="Image of Dax Lee"
+          width={500}
+          height={333}
           priority
         />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+        <span className={styles.tree1}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <nav className={styles.nav}>
+          <ul>
+            {/* TODO: turn this into actual page navigation with routing */}
+            {/*
+              Clicking a nav link will auto-scroll the page to a specific y point
+              as described by the top y coordinate of the div with the content
+            */}
+            <li
+              className={styles.navLink}
+              onClick={() =>
+                musicElemRef.current?.scrollIntoView(scrollOptions)
+              }
+            >
+              Music
+            </li>
+            <li
+              className={styles.navLink}
+              onClick={() => techElemRef.current?.scrollIntoView(scrollOptions)}
+            >
+              Tech
+            </li>
+            <li
+              className={styles.navLink}
+              onClick={() =>
+                createElemRef.current?.scrollIntoView(scrollOptions)
+              }
+            >
+              Create
+            </li>
+          </ul>
+        </nav>
+        <div className={styles.featureContainer}>
+          <div ref={musicElemRef} className={styles.musicContainer}>
+            Music Music Music Music Music Music Music Music Music Music Music
+            Music Music Music Music Music Music Music Music Music Music Music
+            Music Music Music Music Music Music
+          </div>
+          <div ref={techElemRef} className={styles.techContainer}>
+            Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech
+            Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech
+            Tech Tech Tech Tech Tech Tech
+          </div>
+          <div ref={createElemRef} className={styles.createContainer}>
+            Create Create Create Create Create Create Create Create Create
+            Create Create Create Create Create Create Create Create Create
+            Create Create Create Create Create Create Create
+          </div>
         </div>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
