@@ -3,12 +3,15 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { useRef } from "react";
+import Link from "next/link";
+import BackToTop from "./components/BackToTop";
 
 export default function Home() {
   // elem refs for each div
   const techElemRef = useRef<HTMLDivElement | null>(null);
   const musicElemRef = useRef<HTMLDivElement | null>(null);
-  const createElemRef = useRef<HTMLDivElement | null>(null);
+  const contactElemRef = useRef<HTMLDivElement | null>(null);
+  const mastHeadElemRef = useRef<HTMLDivElement | null>(null);
 
   const scrollOptions: ScrollIntoViewOptions = {
     behavior: "smooth",
@@ -17,7 +20,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <div className={styles.mastheadContainer}>
+        <div ref={mastHeadElemRef} className={styles.mastheadContainer}>
           <Image
             className={styles.mastheadImage}
             src="/Dax_Lee_Portrait_500.jpeg"
@@ -47,29 +50,87 @@ export default function Home() {
               <li
                 className={styles.navLink}
                 onClick={() =>
-                  createElemRef.current?.scrollIntoView(scrollOptions)
+                  contactElemRef.current?.scrollIntoView(scrollOptions)
                 }
               >
-                Create
+                Contact
               </li>
             </ul>
           </nav>
         </div>
         <div className={styles.featureContainer}>
-          <div ref={musicElemRef} className={styles.musicContainer}>
-            Music Music Music Music Music Music Music Music Music Music Music
-            Music Music Music Music Music Music Music Music Music Music Music
-            Music Music Music Music Music Music
+          <div ref={musicElemRef} className={styles.feature}>
+            <div className={styles.musicContainer}>
+              <p>
+                Music Music Music Music Music Music Music Music Music Music
+                Music Music Music Music Music Music Music Music Music Music
+                Music Music Music Music Music Music Music Music
+              </p>
+              <BackToTop
+                scrollOptions={scrollOptions}
+                scrollToElementRef={mastHeadElemRef}
+              ></BackToTop>
+            </div>
           </div>
-          <div ref={techElemRef} className={styles.techContainer}>
-            Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech
-            Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech Tech
-            Tech Tech Tech Tech Tech Tech
+          <div ref={techElemRef} className={styles.feature}>
+            <div className={styles.techContainer}>
+              <p>
+                <b>Dax Lee</b> is a seasoned software engineering leader with
+                over 20 years of experience building and scaling consumer and
+                enterprise products. As CTO of Winning Group—one of Australia’s
+                largest online retailers—he successfully doubled revenue within
+                his first five years.
+              </p>
+              <p>
+                Dax has led web, mobile, social, and VR development for top-tier
+                brands including Disney, Intel, Facebook, and the United
+                Nations. He is a proven technology leader and strategic advisor
+                with a strong track record of driving growth through innovation,
+                product management, and team leadership.
+              </p>
+              <div className={styles.contactLinks}>
+                <p>
+                  <Link
+                    target="_blank"
+                    href="https://www.linkedin.com/in/daxlee/"
+                  >
+                    linkedin.com/in/daxlee
+                  </Link>
+                </p>
+              </div>
+              <BackToTop
+                scrollOptions={scrollOptions}
+                scrollToElementRef={mastHeadElemRef}
+              ></BackToTop>
+            </div>
           </div>
-          <div ref={createElemRef} className={styles.createContainer}>
-            Create Create Create Create Create Create Create Create Create
-            Create Create Create Create Create Create Create Create Create
-            Create Create Create Create Create Create Create
+          <div ref={contactElemRef} className={styles.feature}>
+            <div className={styles.contactContainer}>
+              <h1>Dax Lee</h1>
+              <p>Let&apos;s create.</p>
+              <div className={styles.contactLinks}>
+                <p>
+                  <Link
+                    href="https://www.instagram.com/daxleemusic/"
+                    target="_blank"
+                  >
+                    @daxleemusic
+                  </Link>
+                </p>
+                <p>
+                  <Link
+                    target="_blank"
+                    href="https://www.linkedin.com/in/daxlee/"
+                  >
+                    linkedin.com/in/daxlee
+                  </Link>
+                </p>
+              </div>
+              <BackToTop
+                scrollOptions={scrollOptions}
+                scrollToElementRef={mastHeadElemRef}
+              ></BackToTop>
+            </div>
           </div>
         </div>
       </main>

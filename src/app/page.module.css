@@ -118,27 +118,69 @@
   cursor: pointer;
 }
 
-.featureContainer > div {
+.feature {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature > div {
   border: 1px solid;
   background: white;
   width: 500px;
   border: 3px solid var(--color-custom-red);
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature h1 {
+  margin-bottom: .5rem;
+}
+
+.feature p {
+  margin-bottom: 1.5rem;
+}
+
+.feature a {
+  color: var(--color-custom-purple)
+}
+
+.feature a:hover {
+  text-decoration: underline;
+}
+
+.feature b {
+  font-size: 24px;
+  font-weight: normal;
+  padding-right: .1rem;
 }
 
 .musicContainer {
-  margin-top: 300px;
-  transform: translateX(-25%);
+  /* margin-top: 300px; */
+  /* transform: translateX(-25%); */
 }
 
 .techContainer {
-  margin-top: 300px;
-  transform: translateX(25%);
+  /* margin-top: 300px; */
+  /* transform: translateX(25%); */
 }
 
-.createContainer {
-    margin-top: 300px;
+.contactContainer {
+    /* margin-top: 300px; */
 }
+
+.contactLinks {
+  /* margin-top: 1.5rem; */
+}
+
+/* .instaLogo {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: .2rem;
+} */
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
