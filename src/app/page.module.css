@@ -59,33 +59,6 @@
   outline: 3px solid var(--color-custom-red);
 }
 
-/* .tree1 {
-  display: flex;
-  height: 100px;
-  width: 500px;
-}
-
-.tree1 > span:first-child {
-  display: block;
-  height: 50%;
-  border: solid var(--color-custom-red);
-  border-width: 0 3px 3px 0;
-  margin-left: 100px;
-  width: 100px;
-}
-
-.tree1 > span:first-child::after {
-  content: " ";
-  display: block;
-  height: 100%;
-  border: solid var(--color-custom-red);
-  border-width: 0 3px 0 0;
-  margin-top: 50%;
-  margin-left: -100px;
-  width: 100px;
-} */
-
-
 .nav {
   width: 500px;
   max-width: 100%;
@@ -157,30 +130,9 @@
   padding-right: .1rem;
 }
 
-.musicContainer {
-  /* margin-top: 300px; */
-  /* transform: translateX(-25%); */
+.contactLinks p {
+  margin-bottom: .5rem;
 }
-
-.techContainer {
-  /* margin-top: 300px; */
-  /* transform: translateX(25%); */
-}
-
-.contactContainer {
-    /* margin-top: 300px; */
-}
-
-.contactLinks {
-  /* margin-top: 1.5rem; */
-}
-
-/* .instaLogo {
-  width: 20px;
-  height: 20px;
-  float: left;
-  margin-right: .2rem;
-} */
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {

@@ -62,10 +62,27 @@ export default function Home() {
           <div ref={musicElemRef} className={styles.feature}>
             <div className={styles.musicContainer}>
               <p>
-                Music Music Music Music Music Music Music Music Music Music
-                Music Music Music Music Music Music Music Music Music Music
-                Music Music Music Music Music Music Music Music
+                <b>Dax Lee</b> is a DJ and producer based in San Francisco. A
+                regular at festivals like Glastonbury, Symbiosis, Rainbow
+                Serpent, Love International, and Secret Garden Party, he&apos;s
+                also played in clubs from Detroit to Ibiza.
               </p>
+              <p>
+                His global reach extends across the Pacific Rim, with
+                performances in Tokyo, Tulum, and Sydney—including a massive New
+                Year&apos;s Eve set on a boat in front of the Sydney Opera House
+                and a headline slot at the official Field Day after-party.
+              </p>
+              <div className={styles.contactLinks}>
+                <p>
+                  <Link
+                    target="_blank"
+                    href="https://soundcloud.com/daxleemusic"
+                  >
+                    soundcloud.com/daxleemusic
+                  </Link>
+                </p>
+              </div>
               <BackToTop
                 scrollOptions={scrollOptions}
                 scrollToElementRef={mastHeadElemRef}
