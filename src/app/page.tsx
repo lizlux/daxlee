@@ -83,10 +83,7 @@ export default function Home() {
                   </Link>
                 </p>
               </div>
-              <BackToTop
-                scrollOptions={scrollOptions}
-                scrollToElementRef={mastHeadElemRef}
-              ></BackToTop>
+              <BackToTop scrollToElementRef={mastHeadElemRef}></BackToTop>
             </div>
           </div>
           <div ref={techElemRef} className={styles.feature}>
@@ -115,10 +112,7 @@ export default function Home() {
                   </Link>
                 </p>
               </div>
-              <BackToTop
-                scrollOptions={scrollOptions}
-                scrollToElementRef={mastHeadElemRef}
-              ></BackToTop>
+              <BackToTop scrollToElementRef={mastHeadElemRef}></BackToTop>
             </div>
           </div>
           <div ref={contactElemRef} className={styles.feature}>
@@ -143,10 +137,7 @@ export default function Home() {
                   </Link>
                 </p>
               </div>
-              <BackToTop
-                scrollOptions={scrollOptions}
-                scrollToElementRef={mastHeadElemRef}
-              ></BackToTop>
+              <BackToTop scrollToElementRef={mastHeadElemRef}></BackToTop>
             </div>
           </div>
         </div>

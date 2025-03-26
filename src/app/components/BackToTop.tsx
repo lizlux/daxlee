@@ -5,11 +5,13 @@ import Image from "next/image";
 
 export default function BackToTop({
   scrollToElementRef,
-  scrollOptions,
 }: {
   scrollToElementRef: RefObject<null | HTMLDivElement>;
-  scrollOptions: ScrollOptions;
 }) {
+  const scrollOptions: ScrollIntoViewOptions = {
+    behavior: "instant",
+  };
+
   return (
     <Link
       href="#"
