@@ -20,7 +20,7 @@
 }
 
 .mastheadContainer {
-  height: 100vh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,12 +75,13 @@
 }
 
 .feature {
-  height: 100vh;
+  height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 100%;
   line-height: 1.8rem;
+  margin-bottom: 100px;
 }
 
 .feature > div {
